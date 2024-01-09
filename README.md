@@ -21,3 +21,8 @@ As you progress, encounter iconic characters with their own unique wisdom and ch
 Dive into the world of Legacy of Miyagi-Do, where every punch thrown and every lesson learned contributes to your growth. Train under the watchful eye of Mr. Miyagi, explore the hidden corners of the dojo, and face challenges that will test not only your physical prowess but the strength of your character.
 
 Will you emerge as a true martial arts legend, embodying the essence of Miyagi-Do? Join us on this extraordinary adventure — Embrace the Spirit, Master the Art, and Live the Legend.
+
+
+
+This README was generated with GPT help, using this prompt:
+![](https://i.ibb.co/jGtmFsD/image.png)
