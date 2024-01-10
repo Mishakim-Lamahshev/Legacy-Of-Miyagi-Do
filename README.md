@@ -4,6 +4,9 @@
 
 Welcome to the mystical world of **Legacy of Miyagi-Do**, a transcendent journey into the heart of karate wisdom and discipline. Prepare to embark on an extraordinary adventure where every move, every choice, shapes your destiny as a true martial arts legend.
 
+
+The formal elemnts can be found in this file: [formal-elements.md](formal-elements.md)
+
 ### 🌟 The Essence
 
 In this immersive martial arts odyssey, you are not just a player; you are a disciple seeking to embody the spirit of Miyagi-Do. Your journey begins in the mist-covered mountains, discovering a forgotten dojo steeped in ancient lore. The air is thick with the whispers of Mr. Miyagi's teachings, and you are destined to unlock the secrets of karate.
