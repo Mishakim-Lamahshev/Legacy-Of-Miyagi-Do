@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
     public InputAction punch=new InputAction(type: InputActionType.Button);
     private GameObject TurnManager;
     private TurnsController turnsManager;
+    private Attack attackScript;
 
     public float moveSpeed = 90f;
 
@@ -37,6 +38,11 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attackScript=gameObject.GetComponent<Attack>();
+        if(attackScript==null)
+        {
+            Debug.Log("Object "+ gameObject.tag+" has no attack script");
+        }
         TurnManager=GameObject.FindGameObjectWithTag("Turn Manage");
         turnsManager= TurnManager.GetComponent<TurnsController>();
         if(turnsManager.getIndicator()==1){OnEnable();}
@@ -49,9 +55,9 @@ public class PlayerControl : MonoBehaviour
        if(turnsManager.getIndicator()==1)
        {
         OnEnable();
-        moveRight.performed += ctx => MovePlayer(new Vector3(1f, 0f, 0f),"RIGHT STEP ACCEPTED");
-        moveLeft.performed += ctx => MovePlayer(new Vector3(-1f, 0f, 0f),"LEFT STEP ACCEPTED");
-        jump.performed += ctx => MovePlayer(new Vector3(0f, 7f, 0f),"JUMP ACCEPTED");
+        moveRight.performed += ctx => MovePlayer(new Vector3(1f, 0f, 0f));
+        moveLeft.performed += ctx => MovePlayer(new Vector3(-1f, 0f, 0f));
+        jump.performed += ctx => MovePlayer(new Vector3(0f, 7f, 0f));
         punch.performed += ctx => AttackEnemy("Punch");
         kick.performed += ctx => AttackEnemy("Kick");
        }
@@ -61,20 +67,39 @@ public class PlayerControl : MonoBehaviour
        } 
     }
 
-    void MovePlayer(Vector3 movement,string log)
+    void MovePlayer(Vector3 movement)
     {
         // Translate the player's position based on input and speed
         transform.Translate(movement * moveSpeed * Time.deltaTime, Space.World);
-        Debug.Log(log);
         turnsManager.swapTurn();
-        Debug.Log("SWAPPED TURN!");
     }
 
     void AttackEnemy(string attack)
     {
-        Debug.Log(attack+" ACCEPTED");
+        Debug.Log("ATTACK IS :"+attack);
+        switch (attack)
+        {
+            case "Punch":
+                Debug.Log("Punch case");
+                if(attackScript.inRange(attack))
+                {
+                    attackScript.Punch();
+                }
+                else{Debug.Log("Attack "+attack+" is not in range");}
+                break;
+                
+            case "Kick":
+            Debug.Log("Kick case");
+                if(attackScript.inRange(attack))
+                {
+                    attackScript.Kick();
+                }
+                else{Debug.Log("Attack "+attack+" is not in range");}
+                break;
+                
+            default:
+                break;
+        }
         turnsManager.swapTurn();
-        Debug.Log("SWAPPED TURN!");
-
     }
 }
