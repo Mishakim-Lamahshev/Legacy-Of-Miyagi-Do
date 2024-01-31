@@ -31,4 +31,4 @@ Will you emerge as a true martial arts legend, embodying the essence of Miyagi-D
 
 
 This README was generated with GPT help, using this prompt:
-![](https://i.ibb.co/jGtmFsD/image.png)
+![prompt](https://i.ibb.co/jGtmFsD/image.png)
